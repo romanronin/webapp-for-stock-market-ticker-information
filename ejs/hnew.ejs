@@ -1,0 +1,32 @@
+<%-include("partials/header")%>
+<body id="home">
+
+  <div class="jumbotron py-3 align-items-center header mb-0 rounded-0">
+    TRADEINFI +
+  </div>
+  
+  <div class="container">
+    <form class="rounded" method="GET">
+      <div class="form-group row">
+        <label for="ticker" class="col-sm-3 col-form-label"><strong style="font-size: 1rem;">Ticker:</strong></label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="ticker" name="ticker" placeholder="Ex: - COALINDIA">
+        </div>
+      </div>
+      <div id="btn" class="text-center row">
+        <div class="col-3"></div>
+        <div class="col-9">
+          <button type="submit" class="btn btn-primary" formaction='/fetchr'>RnS</button>
+          <button type="submit" class="btn btn-success" formaction='/fetchs'>ScripStats</button>
+        </div>
+        
+      </div>
+    </form>
+  </div>
+ 
+  
+  
+
+<%-include("partials/footer")%>
+
+  

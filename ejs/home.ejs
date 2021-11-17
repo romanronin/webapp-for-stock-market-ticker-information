@@ -1,0 +1,125 @@
+<%-include("partials/header")%>
+
+<body>
+  <div style="background-color: teal;" class="jumbotron py-3 align-items-center header mb-0 rounded-0">
+    TRADEINFI +
+  </div>
+  <div class="jumbotron py-3 d-flex align-items-center text-center justify-content-center rounded-0">
+    <form method="GET">
+      <input type="text" name="ticker" placeholder="Enter Ticker">
+      <span id="btn" class="d-inline-block">
+        <button type="submit" class="btn btn-primary" formaction='/fetchr'>RnS</button>
+        <button type="submit" class="btn btn-success" formaction='/fetchs'>ScripStats</button>
+      </span>
+    </form>
+  </div>
+
+  <%if(display.exist==0){%>
+  <p id="dne">does not exist</p>
+  <%}%>
+  
+  <%if(display.type=="rs"){%>
+  <div class="container">
+    <div class="row">
+      <div class="col-6"><strong style="font-size: 1.5rem;"><%=display.Ticker%></strong> <%=ex%></div>
+      <div class="col-6 text-right" style="color: teal;"><strong>Volume:<%=display.volume%> <br>LTP:<%=display.lp%>
+          <br>Change:<%=display.change%></strong>(<%=display.pChange%>)</div>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+
+          <th scope="col">Key Levels</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Res Levels 2</td>
+          <td><%=display.Res2%></td>
+
+        </tr>
+        <tr>
+
+          <td>Res Levels 1</td>
+          <td><%=display.Res1%></td>
+        </tr>
+        <tr>
+
+          <td>Pivot Point</td>
+          <td><%=display.PivotPoint%></td>
+
+        </tr>
+        <tr>
+
+          <td>Sup Levels 1</td>
+          <td><%=display.Sup1%></td>
+
+        </tr>
+        <tr>
+
+          <td>Sup Levels 2</td>
+          <td><%=display.Sup2%></td>
+
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <%}else if(display.type=="scrip"){%>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6"><strong style="font-size: 1.5rem;"><%=display.Ticker%></strong> <%=ex%></div>
+      <div class="col-6 text-right" style="color: teal;"><strong>Volume:<%=display.volume%> <br>LTP:<%=display.lp%>
+          <br>Change:<%=display.change%></strong>(<%=display.pChange%>)</div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+
+          <th scope="col">Stats</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+          <td>52 Week High</td>
+          <td><%=display.High52Week%> on <%=display.dateh%></td>
+        </tr>
+        <tr>
+
+          <td>52 Week Low</td>
+          <td><%=display.Low52Week%> on <%=display.date%></td>
+        </tr>
+        <tr>
+
+          <td>Avg 1 Week Vol</td>
+          <td id="volwk"><%=display.AverageVol1Week%></td>
+
+        </tr>
+        <tr>
+
+          <td>Avg 1 Month Vol</td>
+          <td id="volmonth"><%=display.AverageVol1Month%></td>
+
+        </tr>
+        <tr>
+
+          <td>Return % (1YR/YTD)</td>
+          <td><span id="returnyr"><%=display.Return1Year%></span>/<span id="returnytd"><%=display.ReturnYtd%></span>
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <%}%>
+  
+
+
+
+<%-include("partials/footer")%>
