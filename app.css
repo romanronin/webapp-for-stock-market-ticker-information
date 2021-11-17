@@ -1,0 +1,57 @@
+html,body{
+    height:100%;
+}
+body{
+    font-family: monospace;
+   
+}
+#home{
+    background: url("https://images.unsplash.com/photo-1565374391015-af899382f2a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+form.rounded{
+    margin-top: 60%;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.3);
+    border:0.5px solid teal;
+
+
+}
+#ticker::placeholder {
+    font-style: italic;
+    opacity: 0.3;
+}
+div.header{
+    /* background: teal; */
+    background:rgba(0,0,0,0.3);
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    
+}
+
+#dne{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: red;
+}
+
+table{
+    border:1.5px solid teal;
+}   
+
+
+.container{
+    
+    max-width: 400px;
+    margin: auto;
+}
+@media only screen and (max-width:375px){
+    #btn{
+        padding-top: 10px;
+    }
+}
